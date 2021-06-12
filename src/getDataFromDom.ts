@@ -3,10 +3,12 @@ import type { CategoryItemData } from './types';
 const templates: CategoryItemData[] = Array.from(
   document.getElementsByClassName('embed_collection_item')
 ).map((item) => {
-  const arrayOfProperties = Array.from(item.children).map((child) => {
-    const id = child.getAttribute('data-property');
-    return id.split(/:(.+)/);
-  });
+  const arrayOfProperties = Array.from(item.children)
+    .map((child) => {
+      const id = child.getAttribute('data-property');
+      return id ? id.split(/:(.+)/) : null;
+    })
+    .filter((item) => !!item);
 
   const nextSibling = item.nextElementSibling;
   let secondaryCategories: { name: string; slug: string }[] = [];
@@ -50,12 +52,13 @@ const categories = Object.entries(
     };
   }, {})
 )
+  .filter((item) => !!item)
   .map(([key, value]: [string, string]) => ({
     slug: key,
     name: value,
   }))
   .sort((a, b) => {
-    return a.name.localeCompare(b.name);
+    return (a.name || '').localeCompare(b.name || '');
   })
   // add all templates as data
   .map((category) => {

@@ -35,7 +35,23 @@
   const featuredTemplates = items
     .filter((item) => !!item.featuredOrder)
     .sort((a, b) => Number(a.featuredOrder) - Number(b.featuredOrder));
-  console.log(featuredTemplates);
+
+  /**
+   * hiding featured categories
+   */
+  $: {
+    try {
+      const thisContentEl = document.getElementById('ss-content');
+      if (thisContentEl) {
+        const prevSibling = thisContentEl.previousElementSibling;
+        if (prevSibling && isSearching) {
+          (prevSibling as HTMLElement).style.display = 'none';
+        } else if (prevSibling && !isSearching) {
+          (prevSibling as HTMLElement).style.display = 'block';
+        }
+      }
+    } catch {}
+  }
 </script>
 
 {#if isSearching}

@@ -16,7 +16,7 @@
       alt={data.name}
       class="template-image"
     />
-    <div style="opacity: 0" class="temp__desc">
+    <div class="temp__desc">
       <div class="template-desc">
         {data.description}
       </div>
@@ -25,10 +25,19 @@
   <a href={`/template/${data.slug}`} class="template__label">{data.name}</a>
   <div class="temp__desc mobile">
     <div class="template-desc">
-      Use this spreadsheet to create an amortization schedule for a fixed-rate
-      loan. Edit the cells within the blue cell borders (Loan Amount, Term,
-      Interest Rate, etc.). You can also enter optional extra payments within
-      the table to estimate the interest savings.
+      {data.description}
     </div>
   </div>
 </div>
+
+<style>
+  .temp__thumbnail .temp__desc {
+    opacity: 0;
+    transition: 0.1s all;
+  }
+  @media screen and (min-width: 768px) {
+    .home__template:hover .temp__thumbnail .temp__desc {
+      opacity: 1;
+    }
+  }
+</style>
