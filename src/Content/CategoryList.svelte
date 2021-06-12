@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { CategoryItemData } from './types';
+  import type { CategoryItemData } from '../types';
   import CategoryItem from './CategoryItem.svelte';
   import ListEmptyState from './ListEmptyState.svelte';
 

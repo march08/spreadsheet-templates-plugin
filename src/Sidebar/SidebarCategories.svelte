@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Categories } from './types';
+  import type { Categories } from '../types';
   export let categories: Categories;
 </script>
 

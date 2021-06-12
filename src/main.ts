@@ -1,7 +1,7 @@
-import App from './App.svelte';
+import App from './Content/MainContent.svelte';
 import { items, categories } from './getDataFromDom';
-import Searchbar from './SidebarSearch.svelte';
-import Categories from './SidebarCategories.svelte';
+import Searchbar from './Sidebar/SidebarSearch.svelte';
+import Categories from './Sidebar/SidebarCategories.svelte';
 
 const getActiveCategoryFromUrl = () => {
   const pathname = window.location.pathname;

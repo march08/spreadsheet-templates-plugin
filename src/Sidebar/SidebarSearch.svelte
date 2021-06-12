@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { searchKeyword } from './store';
+  import { searchKeyword } from '../store';
 
   let searchValue: string;
 

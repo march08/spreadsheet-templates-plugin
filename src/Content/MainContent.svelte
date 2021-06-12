@@ -2,13 +2,13 @@
   import type {
     CategoryItemData,
     CategoryItemsByPrimaryCategory,
-  } from './types';
+  } from '../types';
 
   export let items: CategoryItemData[];
   export let isFeaturedList: boolean;
   export let activeCategory: string | null;
   export let categories: CategoryItemsByPrimaryCategory;
-  import { searchKeyword } from './store';
+  import { searchKeyword } from '../store';
   import CategoryList from './CategoryList.svelte';
 
   let searchValue: string;
