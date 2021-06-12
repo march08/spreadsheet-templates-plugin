@@ -10,7 +10,7 @@ in head
 />
 ```
 
-at the end of <body>
+at the end of body
 
 ```html
 <script
