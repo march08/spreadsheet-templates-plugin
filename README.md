@@ -1,7 +1,14 @@
 # Embeding on the web
 
-https://cdn.jsdelivr.net/gh/march08/spreadsheet-templates-plugin@latest/dist/categories-plugin.min.js
-https://cdn.jsdelivr.net/gh/march08/spreadsheet-templates-plugin@latest/dist/categories-plugin.min.css
+in head
+`<link href="https://cdn.jsdelivr.net/gh/march08/spreadsheet-templates-plugin@latest/dist/categories-plugin.min.css" rel="stylesheet" type="text/css" />`
+
+at the end of <body>
+`<script defer src="https://cdn.jsdelivr.net/gh/march08/spreadsheet-templates-plugin@latest/dist/categories-plugin.min.js"></script>`
+
+# Build and release
+
+run `yarn build`, commit changes and push. Create a new release in github
 
 _Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)_
 
