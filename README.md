@@ -23,6 +23,10 @@ at the end of body
 
 run `yarn build`, commit changes and push. Create a new release in github
 
+---
+
+# Svelte
+
 _Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)_
 
 ---
