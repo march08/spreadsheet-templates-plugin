@@ -1,7 +1,7 @@
 # Embeding on the web
 
-https://cdn.jsdelivr.net/gh/march08/spreadsheet-templates-plugin@{version}/public/build/bundle.js
-https://cdn.jsdelivr.net/gh/march08/spreadsheet-templates-plugin@{version}/public/build/bundle.css
+https://cdn.jsdelivr.net/gh/march08/spreadsheet-templates-plugin@latest/dist/categories-plugin.min.js
+https://cdn.jsdelivr.net/gh/march08/spreadsheet-templates-plugin@latest/dist/categories-plugin.min.css
 
 _Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)_
 
