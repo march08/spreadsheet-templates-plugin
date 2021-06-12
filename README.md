@@ -1,6 +1,7 @@
 # Embeding on the web
 
 in head
+
 `<link href="https://cdn.jsdelivr.net/gh/march08/spreadsheet-templates-plugin@latest/dist/categories-plugin.min.css" rel="stylesheet" type="text/css" />`
 
 at the end of <body>
