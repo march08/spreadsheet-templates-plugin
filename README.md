@@ -2,10 +2,22 @@
 
 in head
 
-`<link href="https://cdn.jsdelivr.net/gh/march08/spreadsheet-templates-plugin@latest/dist/categories-plugin.min.css" rel="stylesheet" type="text/css" />`
+```html
+<link
+  href="https://cdn.jsdelivr.net/gh/march08/spreadsheet-templates-plugin@latest/dist/categories-plugin.min.css"
+  rel="stylesheet"
+  type="text/css"
+/>
+```
 
 at the end of <body>
-`<script defer src="https://cdn.jsdelivr.net/gh/march08/spreadsheet-templates-plugin@latest/dist/categories-plugin.min.js"></script>`
+
+```html
+<script
+  defer
+  src="https://cdn.jsdelivr.net/gh/march08/spreadsheet-templates-plugin@latest/dist/categories-plugin.min.js"
+></script>
+```
 
 # Build and release
 
