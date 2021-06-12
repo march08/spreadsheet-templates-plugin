@@ -40,7 +40,9 @@ export default {
     sourcemap: true,
     format: 'iife',
     name: 'app',
-    file: 'public/build/bundle.js',
+    file: !production
+      ? 'public/build/bundle.js'
+      : 'dist/categories-plugin.min.js',
   },
   plugins: [
     svelte({
@@ -52,7 +54,9 @@ export default {
     }),
     // we'll extract any component CSS out into
     // a separate file - better for performance
-    css({ output: 'bundle.css' }),
+    css({
+      output: !production ? 'bundle.css' : 'categories-plugin.min.css',
+    }),
     typescript({ sourceMap: !production }),
 
     // If you have external dependencies installed from
