@@ -56,14 +56,14 @@
 {#if isSearching}
   <div class="templates__headline-wrap">
     <div class="h6">Search result</div>
+    <a href={`/templates`} class="explore-link w-inline-block">
+      <div>Back to all templates →</div>
+    </a>
   </div>
   <CategoryList limit={null} data={filteredItemsByKeyword} />
 {:else if isFeaturedList}
   <div class="templates__headline-wrap">
     <div class="h6">Featured templates</div>
-    <a href={`/templates`} class="explore-link w-inline-block">
-      <div>Back to all templates →</div>
-    </a>
   </div>
   <CategoryList limit={null} data={featuredTemplates} />
 {:else if activeCategoryData}

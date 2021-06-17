@@ -1303,14 +1303,11 @@ var app = (function () {
     	return block;
     }
 
-    // (48:25) 
+    // (51:25) 
     function create_if_block_1(ctx) {
-    	let div2;
+    	let div1;
     	let div0;
     	let t1;
-    	let a;
-    	let div1;
-    	let t3;
     	let categorylist;
     	let current;
 
@@ -1324,31 +1321,20 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div2 = element("div");
+    			div1 = element("div");
     			div0 = element("div");
     			div0.textContent = "Featured templates";
     			t1 = space();
-    			a = element("a");
-    			div1 = element("div");
-    			div1.textContent = "Back to all templates →";
-    			t3 = space();
     			create_component(categorylist.$$.fragment);
     			attr_dev(div0, "class", "h6");
-    			add_location(div0, file$2, 49, 4, 1544);
-    			add_location(div1, file$2, 51, 6, 1655);
-    			attr_dev(a, "href", `/templates`);
-    			attr_dev(a, "class", "explore-link w-inline-block");
-    			add_location(a, file$2, 50, 4, 1589);
-    			attr_dev(div2, "class", "templates__headline-wrap");
-    			add_location(div2, file$2, 48, 2, 1501);
+    			add_location(div0, file$2, 52, 4, 1658);
+    			attr_dev(div1, "class", "templates__headline-wrap");
+    			add_location(div1, file$2, 51, 2, 1615);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div2, anchor);
-    			append_dev(div2, div0);
-    			append_dev(div2, t1);
-    			append_dev(div2, a);
-    			append_dev(a, div1);
-    			insert_dev(target, t3, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, div0);
+    			insert_dev(target, t1, anchor);
     			mount_component(categorylist, target, anchor);
     			current = true;
     		},
@@ -1363,8 +1349,8 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div2);
-    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(div1);
+    			if (detaching) detach_dev(t1);
     			destroy_component(categorylist, detaching);
     		}
     	};
@@ -1373,7 +1359,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(48:25) ",
+    		source: "(51:25) ",
     		ctx
     	});
 
@@ -1382,9 +1368,12 @@ var app = (function () {
 
     // (43:0) {#if isSearching}
     function create_if_block(ctx) {
-    	let div1;
+    	let div2;
     	let div0;
     	let t1;
+    	let a;
+    	let div1;
+    	let t3;
     	let categorylist;
     	let current;
 
@@ -1398,20 +1387,31 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div1 = element("div");
+    			div2 = element("div");
     			div0 = element("div");
     			div0.textContent = "Search result";
     			t1 = space();
+    			a = element("a");
+    			div1 = element("div");
+    			div1.textContent = "Back to all templates →";
+    			t3 = space();
     			create_component(categorylist.$$.fragment);
     			attr_dev(div0, "class", "h6");
     			add_location(div0, file$2, 44, 4, 1366);
-    			attr_dev(div1, "class", "templates__headline-wrap");
-    			add_location(div1, file$2, 43, 2, 1323);
+    			add_location(div1, file$2, 46, 6, 1472);
+    			attr_dev(a, "href", `/templates`);
+    			attr_dev(a, "class", "explore-link w-inline-block");
+    			add_location(a, file$2, 45, 4, 1406);
+    			attr_dev(div2, "class", "templates__headline-wrap");
+    			add_location(div2, file$2, 43, 2, 1323);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div1, anchor);
-    			append_dev(div1, div0);
-    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
+    			append_dev(div2, t1);
+    			append_dev(div2, a);
+    			append_dev(a, div1);
+    			insert_dev(target, t3, anchor);
     			mount_component(categorylist, target, anchor);
     			current = true;
     		},
@@ -1430,8 +1430,8 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
-    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div2);
+    			if (detaching) detach_dev(t3);
     			destroy_component(categorylist, detaching);
     		}
     	};
