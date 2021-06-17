@@ -641,7 +641,7 @@ var app = (function () {
     			div1 = element("div");
     			div0 = element("div");
     			div0.textContent = "Sorry, there are no results yet for this search";
-    			attr_dev(div0, "class", "h6");
+    			attr_dev(div0, "class", "h6 empty-message");
     			add_location(div0, file$4, 3, 2, 63);
     			attr_dev(div1, "class", "empty-search-wrap");
     			add_location(div1, file$4, 2, 0, 29);
