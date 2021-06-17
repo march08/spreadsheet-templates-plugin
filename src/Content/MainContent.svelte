@@ -62,6 +62,9 @@
 {:else if isFeaturedList}
   <div class="templates__headline-wrap">
     <div class="h6">Featured templates</div>
+    <a href={`/templates`} class="explore-link w-inline-block">
+      <div>Back to all templates →</div>
+    </a>
   </div>
   <CategoryList limit={null} data={featuredTemplates} />
 {:else if activeCategoryData}
@@ -72,6 +75,9 @@
 {:else}
   <div class="templates__headline-wrap">
     <div class="h6">Featured templates</div>
+    <a href={`/templates`} class="explore-link w-inline-block">
+      <div>Explore all featured templates →</div>
+    </a>
   </div>
   <CategoryList id="temp-featured" limit={6} data={featuredTemplates} />
   {#each categories as category}

@@ -1092,13 +1092,16 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (59:0) {:else}
+    // (62:0) {:else}
     function create_else_block(ctx) {
-    	let div1;
+    	let div2;
     	let div0;
     	let t1;
+    	let a;
+    	let div1;
+    	let t3;
     	let categorylist;
-    	let t2;
+    	let t4;
     	let each_1_anchor;
     	let current;
 
@@ -1125,12 +1128,16 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div1 = element("div");
+    			div2 = element("div");
     			div0 = element("div");
     			div0.textContent = "Featured templates";
     			t1 = space();
+    			a = element("a");
+    			div1 = element("div");
+    			div1.textContent = "Explore all featured templates →";
+    			t3 = space();
     			create_component(categorylist.$$.fragment);
-    			t2 = space();
+    			t4 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
@@ -1138,16 +1145,23 @@ var app = (function () {
 
     			each_1_anchor = empty();
     			attr_dev(div0, "class", "h6");
-    			add_location(div0, file$2, 60, 4, 1977);
-    			attr_dev(div1, "class", "templates__headline-wrap");
-    			add_location(div1, file$2, 59, 2, 1934);
+    			add_location(div0, file$2, 63, 4, 2091);
+    			add_location(div1, file$2, 65, 6, 2202);
+    			attr_dev(a, "href", `/templates`);
+    			attr_dev(a, "class", "explore-link w-inline-block");
+    			add_location(a, file$2, 64, 4, 2136);
+    			attr_dev(div2, "class", "templates__headline-wrap");
+    			add_location(div2, file$2, 62, 2, 2048);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div1, anchor);
-    			append_dev(div1, div0);
-    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
+    			append_dev(div2, t1);
+    			append_dev(div2, a);
+    			append_dev(a, div1);
+    			insert_dev(target, t3, anchor);
     			mount_component(categorylist, target, anchor);
-    			insert_dev(target, t2, anchor);
+    			insert_dev(target, t4, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(target, anchor);
@@ -1206,10 +1220,10 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
-    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div2);
+    			if (detaching) detach_dev(t3);
     			destroy_component(categorylist, detaching);
-    			if (detaching) detach_dev(t2);
+    			if (detaching) detach_dev(t4);
     			destroy_each(each_blocks, detaching);
     			if (detaching) detach_dev(each_1_anchor);
     		}
@@ -1219,14 +1233,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(59:0) {:else}",
+    		source: "(62:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (54:29) 
+    // (57:29) 
     function create_if_block_2(ctx) {
     	let div1;
     	let div0;
@@ -1252,9 +1266,9 @@ var app = (function () {
     			t1 = space();
     			create_component(categorylist.$$.fragment);
     			attr_dev(div0, "class", "h6");
-    			add_location(div0, file$2, 55, 4, 1804);
+    			add_location(div0, file$2, 58, 4, 1918);
     			attr_dev(div1, "class", "templates__headline-wrap");
-    			add_location(div1, file$2, 54, 2, 1761);
+    			add_location(div1, file$2, 57, 2, 1875);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1290,7 +1304,7 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(54:29) ",
+    		source: "(57:29) ",
     		ctx
     	});
 
@@ -1299,9 +1313,12 @@ var app = (function () {
 
     // (49:25) 
     function create_if_block_1(ctx) {
-    	let div1;
+    	let div2;
     	let div0;
     	let t1;
+    	let a;
+    	let div1;
+    	let t3;
     	let categorylist;
     	let current;
 
@@ -1315,20 +1332,31 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div1 = element("div");
+    			div2 = element("div");
     			div0 = element("div");
     			div0.textContent = "Featured templates";
     			t1 = space();
+    			a = element("a");
+    			div1 = element("div");
+    			div1.textContent = "Back to all templates →";
+    			t3 = space();
     			create_component(categorylist.$$.fragment);
     			attr_dev(div0, "class", "h6");
     			add_location(div0, file$2, 50, 4, 1622);
-    			attr_dev(div1, "class", "templates__headline-wrap");
-    			add_location(div1, file$2, 49, 2, 1579);
+    			add_location(div1, file$2, 52, 6, 1733);
+    			attr_dev(a, "href", `/templates`);
+    			attr_dev(a, "class", "explore-link w-inline-block");
+    			add_location(a, file$2, 51, 4, 1667);
+    			attr_dev(div2, "class", "templates__headline-wrap");
+    			add_location(div2, file$2, 49, 2, 1579);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div1, anchor);
-    			append_dev(div1, div0);
-    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
+    			append_dev(div2, t1);
+    			append_dev(div2, a);
+    			append_dev(a, div1);
+    			insert_dev(target, t3, anchor);
     			mount_component(categorylist, target, anchor);
     			current = true;
     		},
@@ -1343,8 +1371,8 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
-    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div2);
+    			if (detaching) detach_dev(t3);
     			destroy_component(categorylist, detaching);
     		}
     	};
@@ -1427,7 +1455,7 @@ var app = (function () {
     	return block;
     }
 
-    // (67:6) {#if category.data.length > 3}
+    // (73:6) {#if category.data.length > 3}
     function create_if_block_3(ctx) {
     	let a;
     	let div;
@@ -1438,10 +1466,10 @@ var app = (function () {
     			a = element("a");
     			div = element("div");
     			div.textContent = "Explore all →";
-    			add_location(div, file$2, 71, 10, 2380);
+    			add_location(div, file$2, 77, 10, 2617);
     			attr_dev(a, "href", a_href_value = `/category/${/*category*/ ctx[9].slug}`);
     			attr_dev(a, "class", "explore-link w-inline-block");
-    			add_location(a, file$2, 67, 8, 2265);
+    			add_location(a, file$2, 73, 8, 2502);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -1461,14 +1489,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(67:6) {#if category.data.length > 3}",
+    		source: "(73:6) {#if category.data.length > 3}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (64:2) {#each categories as category}
+    // (70:2) {#each categories as category}
     function create_each_block$1(ctx) {
     	let div1;
     	let div0;
@@ -1495,9 +1523,9 @@ var app = (function () {
     			t2 = space();
     			create_component(categorylist.$$.fragment);
     			attr_dev(div0, "class", "h6");
-    			add_location(div0, file$2, 65, 6, 2182);
+    			add_location(div0, file$2, 71, 6, 2419);
     			attr_dev(div1, "class", "templates__headline-wrap");
-    			add_location(div1, file$2, 64, 4, 2137);
+    			add_location(div1, file$2, 70, 4, 2374);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1550,7 +1578,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(64:2) {#each categories as category}",
+    		source: "(70:2) {#each categories as category}",
     		ctx
     	});
 
