@@ -27,7 +27,6 @@
 
   $: activeCategoryData = activeCategory
     ? categories.find((item) => {
-        console.log(item.slug, activeCategory, item.slug === activeCategory);
         return item.slug === activeCategory;
       })
     : null;
