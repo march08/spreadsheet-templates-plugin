@@ -1,5 +1,5 @@
 
-(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 var app = (function () {
     'use strict';
 
@@ -67,9 +67,6 @@ var app = (function () {
     }
     function children(element) {
         return Array.from(element.childNodes);
-    }
-    function set_style(node, key, value, important) {
-        node.style.setProperty(key, value, important ? 'important' : '');
     }
     function custom_event(type, detail) {
         const e = document.createEvent('CustomEvent');
@@ -645,11 +642,8 @@ var app = (function () {
     			div0 = element("div");
     			div0.textContent = "Sorry, there are no results yet for this search";
     			attr_dev(div0, "class", "h6");
-    			add_location(div0, file$4, 6, 2, 132);
+    			add_location(div0, file$4, 3, 2, 63);
     			attr_dev(div1, "class", "empty-search-wrap");
-    			set_style(div1, "display", "block");
-    			set_style(div1, "padding-left", "2rem");
-    			set_style(div1, "padding-right", "2rem");
     			add_location(div1, file$4, 2, 0, 29);
     		},
     		l: function claim(nodes) {
@@ -709,11 +703,11 @@ var app = (function () {
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[3] = list[i];
+    	child_ctx[4] = list[i];
     	return child_ctx;
     }
 
-    // (15:0) {:else}
+    // (16:0) {:else}
     function create_else_block$1(ctx) {
     	let listemptystate;
     	let current;
@@ -746,18 +740,18 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(15:0) {:else}",
+    		source: "(16:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (9:0) {#if items.length > 0}
+    // (10:0) {#if items.length > 0}
     function create_if_block$1(ctx) {
     	let div;
     	let current;
-    	let each_value = /*items*/ ctx[0];
+    	let each_value = /*items*/ ctx[1];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -778,8 +772,9 @@ var app = (function () {
     			}
 
     			attr_dev(div, "role", "list");
+    			attr_dev(div, "id", /*id*/ ctx[0]);
     			attr_dev(div, "class", "templates__grid w-dyn-items");
-    			add_location(div, file$3, 9, 2, 245);
+    			add_location(div, file$3, 10, 2, 265);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -791,8 +786,8 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*items*/ 1) {
-    				each_value = /*items*/ ctx[0];
+    			if (dirty & /*items*/ 2) {
+    				each_value = /*items*/ ctx[1];
     				validate_each_argument(each_value);
     				let i;
 
@@ -817,6 +812,10 @@ var app = (function () {
     				}
 
     				check_outros();
+    			}
+
+    			if (!current || dirty & /*id*/ 1) {
+    				attr_dev(div, "id", /*id*/ ctx[0]);
     			}
     		},
     		i: function intro(local) {
@@ -847,20 +846,20 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(9:0) {#if items.length > 0}",
+    		source: "(10:0) {#if items.length > 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (11:4) {#each items as item}
+    // (12:4) {#each items as item}
     function create_each_block$2(ctx) {
     	let categoryitem;
     	let current;
 
     	categoryitem = new CategoryItem({
-    			props: { data: /*item*/ ctx[3] },
+    			props: { data: /*item*/ ctx[4] },
     			$$inline: true
     		});
 
@@ -874,7 +873,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const categoryitem_changes = {};
-    			if (dirty & /*items*/ 1) categoryitem_changes.data = /*item*/ ctx[3];
+    			if (dirty & /*items*/ 2) categoryitem_changes.data = /*item*/ ctx[4];
     			categoryitem.$set(categoryitem_changes);
     		},
     		i: function intro(local) {
@@ -895,7 +894,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(11:4) {#each items as item}",
+    		source: "(12:4) {#each items as item}",
     		ctx
     	});
 
@@ -911,7 +910,7 @@ var app = (function () {
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
-    		if (/*items*/ ctx[0].length > 0) return 0;
+    		if (/*items*/ ctx[1].length > 0) return 0;
     		return 1;
     	}
 
@@ -989,31 +988,35 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("CategoryList", slots, []);
     	
+    	let { id = "" } = $$props;
     	let { data } = $$props;
     	let { limit } = $$props;
-    	const writable_props = ["data", "limit"];
+    	const writable_props = ["id", "data", "limit"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<CategoryList> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$$set = $$props => {
-    		if ("data" in $$props) $$invalidate(1, data = $$props.data);
-    		if ("limit" in $$props) $$invalidate(2, limit = $$props.limit);
+    		if ("id" in $$props) $$invalidate(0, id = $$props.id);
+    		if ("data" in $$props) $$invalidate(2, data = $$props.data);
+    		if ("limit" in $$props) $$invalidate(3, limit = $$props.limit);
     	};
 
     	$$self.$capture_state = () => ({
     		CategoryItem,
     		ListEmptyState,
+    		id,
     		data,
     		limit,
     		items
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("data" in $$props) $$invalidate(1, data = $$props.data);
-    		if ("limit" in $$props) $$invalidate(2, limit = $$props.limit);
-    		if ("items" in $$props) $$invalidate(0, items = $$props.items);
+    		if ("id" in $$props) $$invalidate(0, id = $$props.id);
+    		if ("data" in $$props) $$invalidate(2, data = $$props.data);
+    		if ("limit" in $$props) $$invalidate(3, limit = $$props.limit);
+    		if ("items" in $$props) $$invalidate(1, items = $$props.items);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -1021,18 +1024,18 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*limit, data*/ 6) {
-    			$$invalidate(0, items = !!limit ? data.slice(0, limit) : data);
+    		if ($$self.$$.dirty & /*limit, data*/ 12) {
+    			$$invalidate(1, items = !!limit ? data.slice(0, limit) : data);
     		}
     	};
 
-    	return [items, data, limit];
+    	return [id, items, data, limit];
     }
 
     class CategoryList extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$3, create_fragment$3, safe_not_equal, { data: 1, limit: 2 });
+    		init(this, options, instance$3, create_fragment$3, safe_not_equal, { id: 0, data: 2, limit: 3 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -1044,13 +1047,21 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*data*/ ctx[1] === undefined && !("data" in props)) {
+    		if (/*data*/ ctx[2] === undefined && !("data" in props)) {
     			console.warn("<CategoryList> was created without expected prop 'data'");
     		}
 
-    		if (/*limit*/ ctx[2] === undefined && !("limit" in props)) {
+    		if (/*limit*/ ctx[3] === undefined && !("limit" in props)) {
     			console.warn("<CategoryList> was created without expected prop 'limit'");
     		}
+    	}
+
+    	get id() {
+    		throw new Error("<CategoryList>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set id(value) {
+    		throw new Error("<CategoryList>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
     	get data() {
@@ -1083,8 +1094,23 @@ var app = (function () {
 
     // (59:0) {:else}
     function create_else_block(ctx) {
+    	let div1;
+    	let div0;
+    	let t1;
+    	let categorylist;
+    	let t2;
     	let each_1_anchor;
     	let current;
+
+    	categorylist = new CategoryList({
+    			props: {
+    				id: "temp-featured",
+    				limit: 6,
+    				data: /*featuredTemplates*/ ctx[5]
+    			},
+    			$$inline: true
+    		});
+
     	let each_value = /*categories*/ ctx[1];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -1099,13 +1125,30 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			div1 = element("div");
+    			div0 = element("div");
+    			div0.textContent = "Featured templates";
+    			t1 = space();
+    			create_component(categorylist.$$.fragment);
+    			t2 = space();
+
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
     			each_1_anchor = empty();
+    			attr_dev(div0, "class", "h6");
+    			add_location(div0, file$2, 60, 4, 1977);
+    			attr_dev(div1, "class", "templates__headline-wrap");
+    			add_location(div1, file$2, 59, 2, 1934);
     		},
     		m: function mount(target, anchor) {
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, div0);
+    			insert_dev(target, t1, anchor);
+    			mount_component(categorylist, target, anchor);
+    			insert_dev(target, t2, anchor);
+
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(target, anchor);
     			}
@@ -1144,6 +1187,7 @@ var app = (function () {
     		},
     		i: function intro(local) {
     			if (current) return;
+    			transition_in(categorylist.$$.fragment, local);
 
     			for (let i = 0; i < each_value.length; i += 1) {
     				transition_in(each_blocks[i]);
@@ -1152,6 +1196,7 @@ var app = (function () {
     			current = true;
     		},
     		o: function outro(local) {
+    			transition_out(categorylist.$$.fragment, local);
     			each_blocks = each_blocks.filter(Boolean);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -1161,6 +1206,10 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div1);
+    			if (detaching) detach_dev(t1);
+    			destroy_component(categorylist, detaching);
+    			if (detaching) detach_dev(t2);
     			destroy_each(each_blocks, detaching);
     			if (detaching) detach_dev(each_1_anchor);
     		}
@@ -1378,7 +1427,7 @@ var app = (function () {
     	return block;
     }
 
-    // (63:6) {#if category.data.length > 3}
+    // (67:6) {#if category.data.length > 3}
     function create_if_block_3(ctx) {
     	let a;
     	let div;
@@ -1389,10 +1438,10 @@ var app = (function () {
     			a = element("a");
     			div = element("div");
     			div.textContent = "Explore all →";
-    			add_location(div, file$2, 67, 10, 2212);
+    			add_location(div, file$2, 71, 10, 2380);
     			attr_dev(a, "href", a_href_value = `/category/${/*category*/ ctx[9].slug}`);
     			attr_dev(a, "class", "explore-link w-inline-block");
-    			add_location(a, file$2, 63, 8, 2097);
+    			add_location(a, file$2, 67, 8, 2265);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -1412,14 +1461,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(63:6) {#if category.data.length > 3}",
+    		source: "(67:6) {#if category.data.length > 3}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (60:2) {#each categories as category}
+    // (64:2) {#each categories as category}
     function create_each_block$1(ctx) {
     	let div1;
     	let div0;
@@ -1446,9 +1495,9 @@ var app = (function () {
     			t2 = space();
     			create_component(categorylist.$$.fragment);
     			attr_dev(div0, "class", "h6");
-    			add_location(div0, file$2, 61, 6, 2014);
+    			add_location(div0, file$2, 65, 6, 2182);
     			attr_dev(div1, "class", "templates__headline-wrap");
-    			add_location(div1, file$2, 60, 4, 1969);
+    			add_location(div1, file$2, 64, 4, 2137);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1501,7 +1550,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(60:2) {#each categories as category}",
+    		source: "(64:2) {#each categories as category}",
     		ctx
     	});
 
@@ -2201,6 +2250,18 @@ var app = (function () {
     if (categoriesTargetEl) {
         new SidebarCategories({
             target: categoriesTargetEl,
+            props: {
+                categories,
+            },
+        });
+    }
+    /**
+     * initialize mobile category list
+     */
+    const categoriesMobileTargetEl = document.getElementById('ss-category-list-mobile');
+    if (categoriesTargetEl) {
+        new SidebarCategories({
+            target: categoriesMobileTargetEl,
             props: {
                 categories,
             },

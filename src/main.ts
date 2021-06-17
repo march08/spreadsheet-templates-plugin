@@ -55,5 +55,19 @@ if (categoriesTargetEl) {
     },
   });
 }
+/**
+ * initialize mobile category list
+ */
+const categoriesMobileTargetEl = document.getElementById(
+  'ss-category-list-mobile'
+);
+if (categoriesTargetEl) {
+  new Categories({
+    target: categoriesMobileTargetEl,
+    props: {
+      categories,
+    },
+  });
+}
 
 export default app;

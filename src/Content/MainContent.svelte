@@ -70,6 +70,10 @@
   </div>
   <CategoryList limit={null} data={activeCategoryData.data} />
 {:else}
+  <div class="templates__headline-wrap">
+    <div class="h6">Featured templates</div>
+  </div>
+  <CategoryList id="temp-featured" limit={6} data={featuredTemplates} />
   {#each categories as category}
     <div class="templates__headline-wrap">
       <div class="h6">{category.name}</div>
