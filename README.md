@@ -23,6 +23,12 @@ at the end of body
 
 run `yarn build`, commit changes and push. Create a new release in github
 
+purge the release here:
+
+```
+https://purge.jsdelivr.net/gh/march08/spreadsheet-templates-plugin@latest/dist/categories-plugin.min.js
+```
+
 ---
 
 # Svelte
