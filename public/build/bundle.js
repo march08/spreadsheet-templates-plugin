@@ -1122,7 +1122,7 @@ var app = (function () {
     		c: function create() {
     			div2 = element("div");
     			div0 = element("div");
-    			div0.textContent = "Featured templates";
+    			div0.textContent = "Featured Templates";
     			t1 = space();
     			a = element("a");
     			div1 = element("div");
@@ -1323,7 +1323,7 @@ var app = (function () {
     		c: function create() {
     			div1 = element("div");
     			div0 = element("div");
-    			div0.textContent = "Featured templates";
+    			div0.textContent = "Featured Templates";
     			t1 = space();
     			create_component(categorylist.$$.fragment);
     			attr_dev(div0, "class", "h6");

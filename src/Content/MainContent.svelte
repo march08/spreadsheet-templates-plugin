@@ -63,7 +63,7 @@
   <CategoryList limit={null} data={filteredItemsByKeyword} />
 {:else if isFeaturedList}
   <div class="templates__headline-wrap">
-    <div class="h6">Featured templates</div>
+    <div class="h6">Featured Templates</div>
   </div>
   <CategoryList limit={null} data={featuredTemplates} />
 {:else if activeCategoryData}
@@ -73,7 +73,7 @@
   <CategoryList limit={null} data={activeCategoryData.data} />
 {:else}
   <div class="templates__headline-wrap">
-    <div class="h6">Featured templates</div>
+    <div class="h6">Featured Templates</div>
     <a href={`/templates-featured`} class="explore-link w-inline-block">
       <div>Explore all featured templates →</div>
     </a>
