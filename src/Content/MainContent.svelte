@@ -74,7 +74,7 @@
 {:else}
   <div class="templates__headline-wrap">
     <div class="h6">Featured templates</div>
-    <a href={`/templates`} class="explore-link w-inline-block">
+    <a href={`/templates-featured`} class="explore-link w-inline-block">
       <div>Explore all featured templates →</div>
     </a>
   </div>

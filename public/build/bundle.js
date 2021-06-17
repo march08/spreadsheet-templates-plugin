@@ -1138,8 +1138,8 @@ var app = (function () {
     			each_1_anchor = empty();
     			attr_dev(div0, "class", "h6");
     			add_location(div0, file$2, 62, 4, 2013);
-    			add_location(div1, file$2, 64, 6, 2124);
-    			attr_dev(a, "href", `/templates`);
+    			add_location(div1, file$2, 64, 6, 2133);
+    			attr_dev(a, "href", `/templates-featured`);
     			attr_dev(a, "class", "explore-link w-inline-block");
     			add_location(a, file$2, 63, 4, 2058);
     			attr_dev(div2, "class", "templates__headline-wrap");
@@ -1458,10 +1458,10 @@ var app = (function () {
     			a = element("a");
     			div = element("div");
     			div.textContent = "Explore all →";
-    			add_location(div, file$2, 76, 10, 2539);
+    			add_location(div, file$2, 76, 10, 2548);
     			attr_dev(a, "href", a_href_value = `/category/${/*category*/ ctx[9].slug}`);
     			attr_dev(a, "class", "explore-link w-inline-block");
-    			add_location(a, file$2, 72, 8, 2424);
+    			add_location(a, file$2, 72, 8, 2433);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -1515,9 +1515,9 @@ var app = (function () {
     			t2 = space();
     			create_component(categorylist.$$.fragment);
     			attr_dev(div0, "class", "h6");
-    			add_location(div0, file$2, 70, 6, 2341);
+    			add_location(div0, file$2, 70, 6, 2350);
     			attr_dev(div1, "class", "templates__headline-wrap");
-    			add_location(div1, file$2, 69, 4, 2296);
+    			add_location(div1, file$2, 69, 4, 2305);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
